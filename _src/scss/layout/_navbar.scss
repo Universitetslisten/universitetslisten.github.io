@@ -1,0 +1,197 @@
+// headroom is the plugin used to pin the navbar to the top.
+// it adds classes with JS, and those classes are used here.
+// Documentation here: http://wicky.nillia.ms/headroom.js/
+
+// title bar text overrides
+.title-bar .menu a {
+  text-decoration: none;
+  color: $white;
+}
+
+.title-bar .menu {
+  // Trick Safari into hardware acceleration
+  transform: translate3d(0,0,0);
+}
+
+.title-bar .menu .menu {
+  position: absolute;
+}
+
+.off-canvas .menu a {
+  color: $white;
+}
+
+.off-canvas .menu li,
+.dropdown .menu li {
+  margin-bottom: 0;
+}
+
+.title-bar .menu > li > a {
+  font-weight: $global-weight-semibold;
+}
+
+.title-bar .button.hollow {
+  padding: .65rem 1rem;
+  font-size: .85rem;
+
+  small {
+    font-size: .65rem;
+  }
+}
+
+.off-canvas .menu .button.hollow {
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 2px solid $white;
+  color: $white;
+
+  &:before {
+    display: none;
+  }
+}
+
+.menu .menu { // subnav menu, with the headroom class added so it doesn't change
+  text-align: left;
+}
+
+.headroom--top .menu .navbar-button,
+.navbar-button {
+  text-align: center;
+
+  small {
+    font-size: rem-calc(16);
+  }
+}
+
+.headroom .menu .menu a {
+  font-size: rem-calc(18);
+  color: $white;
+}
+
+.title-bar {
+  position: relative;
+  height: 80px;
+}
+
+.title-bar-left,
+.title-bar-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title-bar-left {
+  left: 0;
+  min-width: 200px;
+}
+
+.title-bar-right {
+  right: 0;
+  padding: 0 1rem;
+}
+
+
+.logo {
+  margin-left: $global-margin;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  vertical-align: middle; // Align the logo vertically
+  display: inline-block; // Ensure inline-block behavior
+  height: 80px;
+  
+  min-height: 80px;
+  max-height: 120px;
+
+  img {
+    width: 100%; // Ensure it scales correctly
+    height: auto; // Maintain aspect ratio
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.title-bar .menu > li > a {
+  display: inline-block; // Ensure can be vertically aligned
+  vertical-align: middle; // Align the text vertically
+  line-height: 80px; // Match the line-height to the container's height for vertical centering
+  font-size: .8rem; // Adjust as needed for visual balance
+}
+
+// change appearance on scroll.
+.headroom {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+
+  transition: all 200ms ease;
+  will-change: transform;
+
+  &,
+  .hamburger {
+    height: 80px;
+  }
+}
+
+.drilldown .is-drilldown-submenu {
+  background: $brand-color2; // Fix overlap issue
+}
+
+// tightening drop-down arrows on navigaiton parent elements
+.dropdown.menu > li.is-dropdown-submenu-parent > a {
+  padding-right: 1.1rem;
+}
+
+@include breakpoint(smedium down) {
+  .is-dropdown-submenu-parent {
+    position: static;
+  }
+
+  .title-bar {
+    height: 80px;
+
+    .logo {
+      img {
+        width: 80px;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+@include breakpoint(large) {
+  .headroom {
+    position: relative !important;
+    height: 120px;
+  }
+
+  .title-bar {
+    height: 120px;
+
+    .logo {
+      height: 120px;
+
+      img {
+        height: 120px;
+      }
+    }
+  }
+}
+
+@include breakpoint(xlarge) {
+  .title-bar {
+    height: 120px;
+
+    .logo {
+      height: 120px;
+
+      img {
+        height: 120px;
+      }
+    }
+  }
+}

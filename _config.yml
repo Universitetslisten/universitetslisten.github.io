@@ -1,0 +1,81 @@
+# Site config:
+baseurl: ""
+url: "https://universitetslisten.no"
+github_username:  peterhpo
+relative_permalinks: false
+permalink: nyheter/:title/  # permalink: date
+timezone: Europe/Oslo
+
+include:
+  - _pages
+
+# Site content:
+title: Universitetslisten
+email: universitetslista@gmail.com
+description: |
+  Universitetsliten er en liste som står for bla bla bla
+logo: /static/favicons/logo.png
+## All the email addresses
+conduct_email: "universitetslista@gmail.com"
+contact_us_email: "universitetslista@gmail.com"
+
+future: true
+
+# Other configs:
+collections:  # process the _data folder
+  components:
+    output: false
+  schedule:
+    output: true
+    permalink: /:collection/:name/
+  organizers:
+    output: false
+    permalink: /:collection/
+  presenters:
+    output: true
+    permalink: /:collection/
+  sponsors:
+    output: false
+    permalink: /:collection/
+  places:
+    output: false
+    permalink: /:collection/
+  jobs:
+    output: true
+    permalink: /:collection/:name/
+
+plugins:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
+
+include:
+  - _pages
+
+exclude:
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+
+# Frontmatter fallback settings
+# This is the default logo that people see on blog posts
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /static/favicons/logo.png
+  - scope:
+      path: "_presenters"
+      type: presenters
+    values:
+      sitemap: false

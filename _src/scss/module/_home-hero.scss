@@ -1,0 +1,97 @@
+.header {
+  position: relative;
+  margin: 80px auto auto auto;
+  padding: 6rem 0;
+  background-color: $brand-color2;
+  color: $white;
+
+
+  &:before {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    transform: translateY(-50%);
+    z-index: 0;
+    display: block;
+    width: 50%;
+    height: 50%;
+    background-image: url('#{env("BASEURL")}/static/img/header.svg');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+    content: "";
+    opacity: .3;
+    transition: all 200ms ease;
+  }
+
+  @media (min-width: 2200px) {
+    &:before {
+      background-size: 1000px auto;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-image: url('#{env("BASEURL")}/static/img/hero-curve.svg');
+    background-position: center bottom -16vw;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    content: "";
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-text {
+    max-width: 27rem;
+    float: none;
+    text-align: right; // Align text to the right
+    margin-left: auto; // Ensure any additional spacing pushes header-text to the right
+    margin-right: 1.5rem; // Space it from the container’s edge
+  }
+
+  h1 {
+    margin-bottom: 2.25rem;
+  }
+
+  .event-info-detail {
+    margin-bottom: 1.5rem;
+  }
+
+  .button + .button {
+    margin-left: .5rem;
+  }
+
+  @include breakpoint(medium down) {
+    &:before {
+      left: 10%;
+    }
+  }
+
+  @include breakpoint(medium up) {
+    .header-text {
+      max-width: 27rem;
+      float: none;
+      text-align: right; // Align text to the right
+      margin-left: auto; // Ensure any additional spacing pushes header-text to the right
+      margin-right: 1.5rem; // Space it from the container’s edge
+    }
+  }
+
+  @include breakpoint(large up) {
+    margin: 0 auto;
+
+    &:before {
+      opacity: 1; // Adjust opacity setting when required
+
+      background-position: left center; // Set alignment to the left, vertically centered
+    }
+  }
+}

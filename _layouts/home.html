@@ -1,0 +1,166 @@
+---
+layout: base
+---
+
+<header class="header">
+  <div class="row">
+    <div class="header-text">
+
+      <h1>{{site.title}}</h1>
+
+      <div class="event-info-detail">
+        <strong
+          class="event-indfo-ate">Stem på oss i studentvalget 2025</strong>
+      </div>
+
+      <a class="button" href="{{ site.url }}{{ site.baseurl }}/politikk/">Se politikken vår</a>
+    </div>
+  </div>
+</header>
+
+
+<div class="home-content">
+
+<section class="section-pad curve1 theme-brand-color1">
+  <div class="row column xlarge-9">
+    <h1 class="lead column xlarge-9 large-centered text-center">Kampsaker</h1>
+
+    <div class="date-card medium-4 column">
+      <a href="{{ site.url }}{{ site.baseurl }}/politikk#sak1/">
+        <div class="details">
+          <h2 class="date-card-title">Sterkere støtte til studentfrivillighet</h2>
+          <p>
+            Universitetslisten skal jobbe og arbeide for å styrke studentfrivilligheten ved Universitetet i Oslo. 
+            Ved at Universitetet vårt har det største foreningsmiljøet i Norge så har Universitetet i Oslo og dets studenter et spesielt ansvar å støtte og forvalte dette foreningslivet. 
+            Vi skal aktivt jobbe for økt økonomisk støtte og synliggjøring av studentforeninger og studentfrivilligheten ved Universitetet. 
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="date-card medium-4 column">
+      <a href="{{ site.url }}{{ site.baseurl }}/politikk#sak2/">
+        <div class="details">
+          <h2 class="date-card-title">Støtte til et fritt, kritisk og internasjonalt akademia</h2>
+          <p>
+            I en tid av urolighet og dyrtid så er det å være student nå utfordrende og vanskelig. 
+            Våre rettigheter som vi har tatt for gitt som respekt for den internasjonale rettsorden, akademisk frihet, institusjonell autonomi og studentdemokrati er under angrep. 
+            Vi skal stå i solidaritet med studenter i Europa og hele verden som kjemper for disse rettighetene, men også studenter her til lands. 
+            Det å være en internasjonal student her ved universitetet skal kunne nyte de samme godene og rettighetene på lik linje som norske studenter.</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="date-card medium-4 column">
+      <a href="{{ site.url }}{{ site.baseurl }}/politikk#sak3/">
+        <div class="details">
+          <h2 class="date-card-title">Triveligere universitet for studier og sosialt</h2>
+          <p>
+            Oss studenter er ikke definert av seminarrom og forelesningssaler, men også uteområdene, bokhandlene og plasser til å koble seg litt av universitetet på universitetet. 
+            For hvordan vi ser på begrepet læringsmiljø er noe helhetlig, vi skal jobbe for mer grønt arealer på universitetet som studentene kan nytte seg av, 
+            mer benker og sitte plasser ute på universitetene for å hjelpe de med nedsatt mobilitet og de som vil sitte og nyte solen.
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad theme-brand-color2">
+  <div class="row column v-pad-bottom text-center">
+    <h2>Organisasjon</h2>
+  </div>
+  <div class="row card-row">
+    <div class="medium-4 column">
+      <div class="card">
+        <img
+          src="{{ "/static/img/heart-line.svg" | relative_url }}"
+          alt="A heart"
+          class="card-icon"
+          />
+        <div class="card-section">
+          <h3 class="card-title">Bli med i {{ site.title }}</h3>
+          <p>{{site.title}} er alltid ute etter flere som deler vår lidenskap for universitetet.<br>Se informasjon for hvordan <strong><a href="{{ site.url }}{{ site.baseurl }}/aktiv/">bli med</a></strong> i listen!</p>
+      </div>
+      </div>
+    </div>
+    <div class="medium-4 column">
+      <div class="card">
+        <img
+          src="{{ "/static/img/compass.svg" | relative_url }}"
+          alt="Compass"
+          class="card-icon"
+          />
+        <div class="card-section">
+          <h3 class="card-title">Politikken vår</h3>
+          <p>Se <strong><a href="{{ site.url }}{{ site.baseurl }}/politikk/">politikken</a></strong> vår</p>
+        </div>
+      </div>
+    </div>
+    <div class="medium-4 column">
+      <div class="card">
+        <img
+          src="{{ "/static/img/star.svg" | relative_url }}"
+          alt="Star"
+          class="card-icon"
+          />
+        <div class="card-section">
+            <h3 class="card-title">Gjennomslag </h3>
+            <p>Se våre <strong><a href="{{ site.url }}{{ site.baseurl }}/gjennomslag/">gjennomslag</a></strong>!</p>
+        </div>
+      </div>
+    </div>
+    <div class="medium-4 column">
+      <div class="card">
+        <img
+          src="{{ "/static/img/megaphone.svg" | relative_url }}"
+          alt="Talk"
+          class="card-icon"
+          />
+        <div class="card-section">
+            <h3 class="card-title">Varsling</h3>
+            <p>Se info om varsling i organisasjonen vår <strong><a href="{{ site.url }}{{ site.baseurl }}/varsling/">her</a></strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news-section section-pad theme-brand-color4 back">
+  <div class="row column v-pad-bottom">
+    <h2 class="text-center">Siste Nyheter</h2>
+  </div>
+
+  <div class="news row">
+    {% for post in site.posts limit:12 %}
+      {% unless post.hidden %}
+      <article class="news-title medium-4 column">
+        <div class="card {% if post.category == "Sponsorship" %}card-theme-brand-color3{% else %}card-theme-brand-color2{% endif %}">
+          <div class="card-section">
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <h3>
+              <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title | escape }}</a>
+            </h3>
+          </div>
+        </div>
+      </article>
+      {% endunless %}
+    {% endfor %}
+  </div>
+
+  <div class="row v-pad-top">
+    <div class="medium-4 column medium-centered text-center">
+      <a class="button" href="{{ site.url }}{{ site.baseurl }}/nyheter/">Les nyheter</a>
+    </div>
+  </div>
+</section>
+
+<div class="photo-hero-inline curve-top tint-brand-color2">
+  <img
+    src="{{ site.url }}{{ site.baseurl }}/static/img/styret.jpg"
+    alt="Bilde av styret til {{ site.title }}"
+    loading="lazy"
+     />
+</div>
+
+</div><!-- end .content -->
