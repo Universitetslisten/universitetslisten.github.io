@@ -18,16 +18,21 @@ title: Styret
   <section class="section-pad">
     <div class="row column">
       <!-- <p class="lead">Om oss i styret</p> -->
-      <div class="row small-up-1 smedium-up-2 medium-up-3 large-up-4 organizers">
+      <div class="row smedium-up-1 medium-up-2 large-up-3 xxxlarge-up-4 organizers">
         {% assign sorted_organizers = site.organizers | sort: 'order' %}
         {% for organizer in sorted_organizers %}
           {% unless organizer.hidden %}
             <div class="column column-block">
               <div class="profile">
-                <img
-                  class="thumbnail"
-                  src="{{ site.url }}{{ site.baseurl }}{{ organizer.photo_url }}"
-                  alt="Photo of {{ organizer.name }}" />
+                {% if organizer.photo_url %}
+                  <img
+                    class="thumbnail"
+                    src="{{ site.url }}{{ site.baseurl }}{{ organizer.photo_url }}"
+                    alt="Photo of {{ organizer.name }}" />
+
+                {% else %}
+                  <div style="height: 320px;margin-bottom: 20.8px;border: 4px;"></div>
+                {% endif %}
 
                 <div class="profile-namecard">
                   <h3 class="profile-name">
@@ -36,8 +41,14 @@ title: Styret
                       ({{ organizer.pronouns }})
                     {% endif %}
                   </h3>
-                  {{ organizer.role }}
-                </div>
+                  <h5><b>{{ organizer.board_role }}</b></h5>
+                  <h6 style="line-height: 1.5;">
+                    {{ organizer.role }}<br>
+                    Alder: {{ organizer.age }}<br>
+                    Studieretning: {{ organizer.studies }}<br>
+                    Fakultet: {{ organizer.faculty }}
+                  </h6>
+                                  </div>
                 <ul class="social-icons">
                   {% if organizer.twitter != blank %}
                   <li>
