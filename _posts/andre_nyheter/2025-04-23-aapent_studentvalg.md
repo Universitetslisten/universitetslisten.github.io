@@ -12,6 +12,7 @@ Vi er glade for å kunngjøre at studentvalget 2025 nå er offisielt åpnet! Hve
 Studentparlamentet jobber for en bedre studiehverdag, forbedrede vilkår for studentene, og et mer levende studentmiljø. Din stemme betyr noe!
 
 **Besøk vår stand!**
+
 Universitetslisten står på stand den kommende uken, og vi oppfordrer alle studenter til å komme innom for å lære mer om vår politikk og våre planer for fremtiden. Vi ser frem til å møte deg, svare på spørsmål og diskutere hvordan vi kan forbedre studentlivet sammen.
 
 **Husk å stemme!**
