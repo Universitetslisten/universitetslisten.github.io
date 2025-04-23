@@ -1,5 +1,5 @@
 ---
-description: Nyheter om {{site.title}}.
+description: Nyheter om Universitetslisten.
 heading: Nyheter
 layout: post-list
 permalink: /nyheter/

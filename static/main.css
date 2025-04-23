@@ -8217,11 +8217,6 @@ blockquote cite {
   opacity: 0.3;
   transition: all 200ms ease;
 }
-@media (min-width: 2200px) {
-  .header:before {
-    background-size: 1000px auto;
-  }
-}
 .header:after {
   position: absolute;
   bottom: 0;
